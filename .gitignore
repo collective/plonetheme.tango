@@ -18,3 +18,11 @@ htmlcov/
 *.log
 output.xml
 *.swp
+/Gruntfile.js
+/package.json
+/src/plonetheme/tango/theme/css/bundle.css
+/src/plonetheme/tango/theme/css/bundle.css.map
+/src/plonetheme/tango/theme/js/bundle.min.js
+/src/plonetheme/tango/theme/js/bundle.min.js.map
+/src/plonetheme/tango/theme/js/tango-bundle-compiled.js
+/temp_resources/*

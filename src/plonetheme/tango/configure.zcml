@@ -12,9 +12,17 @@
 
   <include package=".browser" />
 
+  <!-- ++theme++plonetheme.tango/ -->
   <plone:static
       directory="theme"
       type="theme"
+      name="plonetheme.tango"
+      />
+
+  <!-- ++plone++plonetheme.tango/ -->
+  <plone:static
+      directory="theme"
+      type="plone"
       name="plonetheme.tango"
       />
 
