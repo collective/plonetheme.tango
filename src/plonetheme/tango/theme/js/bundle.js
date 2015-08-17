@@ -11,14 +11,15 @@ if(window.jQuery){
 
 require([
   'jquery',
-  'main',
   'pat-logger'
-], function($, dep1, logger){
+], function($, logger){
   'use strict';
-  var log = logger.getLogger('requirejs');
-  log.warn('loaded main value: ' + dep1);
 
-  $(document).ready(function(){
-    $('body').append('<p class="example-element">Added by example bundle</p>');
-  });
+  // initialize only if we are in top frame
+  if (window.parent === window) {
+    $(document).ready(function() {
+      $('body').addClass('tango-main');
+    });
+  }
+
 });

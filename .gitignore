@@ -26,3 +26,8 @@ output.xml
 /src/plonetheme/tango/theme/js/bundle.min.js.map
 /src/plonetheme/tango/theme/js/tango-bundle-compiled.js
 /temp_resources/*
+/src/plonetheme/tango/theme/css/bundle-compiled.css
+/src/plonetheme/tango/theme/css/bundle-compiled.css.map
+/src/plonetheme/tango/theme/js/bundle-compiled.js
+/src/plonetheme/tango/theme/js/bundle-compiled.js.map
+/src/plonetheme/tango/theme/js/tango-compiled.js
