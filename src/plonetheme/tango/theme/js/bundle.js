@@ -11,8 +11,9 @@ if(window.jQuery){
 
 require([
   'jquery',
+//  'tango-main',
   'pat-logger'
-], function($, logger){
+], function($, dep1, logger){
   'use strict';
 
   // initialize only if we are in top frame
