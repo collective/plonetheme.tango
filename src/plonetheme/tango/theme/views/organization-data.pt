@@ -1,0 +1,21 @@
+<ol id="organization-data">
+	<li
+		tal:content="python:context.portal_registry['plonetheme.tango.organization']['name']"
+		id="name"></li>
+	<li
+		tal:content="python:context.portal_registry['plonetheme.tango.organization']['street']"
+		id="street"></li>
+	<li
+		tal:content="python:context.portal_registry['plonetheme.tango.organization']['zipcode']"
+		id="zipcode"></li>
+	<li
+		tal:content="python:context.portal_registry['plonetheme.tango.organization']['city']"
+		id="city"></li>
+	<li
+		tal:content="python:context.portal_registry['plonetheme.tango.organization']['phone']"
+		id="phone"></li>
+	<li
+		tal:content="python:context.portal_registry['plonetheme.tango.organization']['fax']"
+		id="fax"></li>
+
+</ol>

@@ -31,3 +31,6 @@ output.xml
 /src/plonetheme/tango/theme/js/bundle-compiled.js
 /src/plonetheme/tango/theme/js/bundle-compiled.js.map
 /src/plonetheme/tango/theme/js/tango-compiled.js
+/checkouts/wildcard.responsiveslider/
+/Gruntfile.js.tango
+/Gruntfile.js.working
