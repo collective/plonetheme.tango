@@ -30,40 +30,107 @@
        This is important for per-section styling -->
   <copy attributes="*" css:content="body" css:theme="body" />
 
-  <!-- replace theme placeholder with Plone #content-core -->
-  <replace css:theme="#content-core" css:content="#content-core" />
+  <!-- toolbar -->
+  <replace css:theme="#portal-toolbar" css:content-children="#edit-bar" css:if-not-content=".ajax_load" css:if-content=".userrole-authenticated"/>
+  <replace css:theme="#anonymous-actions" css:content-children="#portal-personaltools-wrapper" css:if-not-content=".ajax_load" css:if-content=".userrole-anonymous"/>
 
+
+  <!-- front-page slider -->
+  <replace
+    css:theme="#carousel-example-generic"
+    css:content="#carousel-example-generic"
+    href="/slider-images/@@slider-images" />
   <drop
     css:theme="#front-page-slider"
     css:if-not-content=".section-front-page" />
+  <drop
+    css:theme="#front-page-slider"
+    css:if-content=".template-edit" />
 
   <!-- replace theme navbar-nav with Plone plone-navbar-nav -->
   <replace
     css:theme-children=".navbar-nav"
     css:content-children=".plone-navbar-nav" />
 
-  <!-- replace theme #portal-column-one with Plone #portal-column-one -->
   <replace
-    css:theme="#portal-column-one"
-    css:content="#portal-column-one" />
-
-  <!-- replace theme #portal-column-two with Plone #portal-column-two -->
+    css:theme-children=".brand-name"
+    css:content-children=".documentFirstHeading"
+    method="raw" />
   <replace
-    css:theme="#portal-column-two"
-    css:content="#portal-column-two" />
-
-  <replace
-    css:theme="#carousel-example-generic"
-    css:content="#carousel-example-generic"
-    href="../slider-images/@@slider-images" />
+    css:theme-children=".documentFirstHeading"
+    css:content-children=".documentFirstHeading"
+    method="raw" />
+  <drop
+    css:theme=".documentFirstHeading"
+    css:if-content=".section-front-page" />
 
   <replace
-    css:theme="#organization-data"
-    css:content="#organization-data"
-    href="../slider-images/@@slider-images" />
+    css:theme=".documentDescription"
+    css:content=".documentDescription"
+    method="raw" />
+  <drop
+    css:content=".documentDescription"
+    css:if-content=".section-front-page" />
 
-  <!-- toolbar -->
-  <replace css:theme="#portal-toolbar" css:content-children="#edit-bar" css:if-not-content=".ajax_load" css:if-content=".userrole-authenticated"/>
-  <replace css:theme="#anonymous-actions" css:content-children="#portal-personaltools-wrapper" css:if-not-content=".ajax_load" css:if-content=".userrole-anonymous"/>
+  <!-- Central column -->
+  <replace css:theme="#content-container" method="raw">
+
+      <xsl:variable name="central">
+        <xsl:if test="//aside[@id='portal-column-one'] and //aside[@id='portal-column-two']">col-xs-12 col-sm-6</xsl:if>
+        <xsl:if test="//aside[@id='portal-column-two'] and not(//aside[@id='portal-column-one'])">col-xs-12 col-sm-9</xsl:if>
+        <xsl:if test="//aside[@id='portal-column-one'] and not(//aside[@id='portal-column-two'])">col-xs-12 col-sm-9</xsl:if>
+        <xsl:if test="not(//aside[@id='portal-column-one']) and not(//aside[@id='portal-column-two'])">col-xs-12 col-sm-12</xsl:if>
+      </xsl:variable>
+
+      <div class="{$central}">
+        <div class="row">
+          <div class="box">
+            <div class="col-xs-12 col-sm-12">
+              <xsl:apply-templates css:select="#content"/>
+            </div>
+            <div class="clearFix"></div>
+          </div>
+        </div>
+        <section class="row" id="viewlet-below-content-body">
+          <div class="box">
+            <div class="col-xs-12 col-sm-12">
+             <xsl:copy-of select="//div[@id='viewlet-below-content']"/>
+            </div>
+            <div class="clearFix"></div>
+          </div>
+        </section>
+      </div><!--/row-->
+  </replace>
+  <drop css:content=".documentFirstHeading" />
+
+  <!-- Alert message -->
+  <replace css:theme-children="#global_statusmessage" css:content-children="#global_statusmessage" />
+
+  <!-- Left column -->
+  <rules if-content="//*[@id='portal-column-one']">
+    <replace css:theme="#column1-container">
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="left-sidebar">
+          <aside id="portal-column-one">
+             <xsl:copy-of select="//*[@id='portal-column-one']/*"/>
+          </aside>
+        </div>
+    </replace>
+  </rules>
+
+  <!-- Right column -->
+  <rules if-content="//*[@id='portal-column-two']">
+    <replace css:theme="#column2-container">
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="right-sidebar" role="complementary">
+          <aside id="portal-column-two">
+             <xsl:copy-of select="//*[@id='portal-column-two']/*"/>
+          </aside>
+        </div>
+    </replace>
+  </rules>
+
+  <replace
+    css:theme-children="footer .container"
+    css:content-children="#portal-footer-wrapper" />
+
 
 </rules>

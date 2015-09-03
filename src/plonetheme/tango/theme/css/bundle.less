@@ -3,7 +3,7 @@
 // ### PLONE IMPORTS ###
 
 // //*// Font families
-@import "@{barcelonetaLessPath}fonts.plone.less";
+//@import "@{barcelonetaLessPath}fonts.plone.less";
 
 // //*// Core variables and mixins
 @import "@{barcelonetaLessPath}variables.plone.less";
@@ -14,8 +14,8 @@
 @import "@{barcelonetaLessPath}mixin.borderradius.plone.less";
 @import "@{barcelonetaLessPath}mixin.buttons.plone.less";
 @import "@{barcelonetaLessPath}mixin.clearfix.plone.less";
-@import "@{barcelonetaLessPath}mixin.gridframework.plone.less"; //grid Bootstrap
-@import "@{barcelonetaLessPath}mixin.grid.plone.less"; //grid Bootstrap
+//@import "@{barcelonetaLessPath}mixin.gridframework.plone.less"; //grid Bootstrap
+//@import "@{barcelonetaLessPath}mixin.grid.plone.less"; //grid Bootstrap
 
 
 // //*// Reset and dependencies
@@ -27,7 +27,7 @@
 @import "@{barcelonetaLessPath}type.plone.less";
 @import "@{barcelonetaLessPath}code.plone.less";
 //@import "deco.plone.less"; //uncomment for deco variant
-@import "@{barcelonetaLessPath}grid.plone.less"; //grid Bootstrap
+//@import "@{barcelonetaLessPath}grid.plone.less"; //grid Bootstrap
 @import "@{barcelonetaLessPath}tables.plone.less";
 @import "@{barcelonetaLessPath}forms.plone.less";
 @import "@{barcelonetaLessPath}buttons.plone.less";
@@ -59,10 +59,10 @@
 @import "@{barcelonetaLessPath}tree.plone.less";
 
 //*// Structure
-@import "@{barcelonetaLessPath}header.plone.less";
+//@import "@{barcelonetaLessPath}header.plone.less";
 @import "@{barcelonetaLessPath}sitenav.plone.less";
 @import "@{barcelonetaLessPath}main.plone.less";
-@import "@{barcelonetaLessPath}footer.plone.less";
+//@import "@{barcelonetaLessPath}footer.plone.less";
 @import "@{barcelonetaLessPath}loginform.plone.less";
 @import "@{barcelonetaLessPath}sitemap.plone.less";
 
@@ -77,4 +77,8 @@
 
 // ### END OF PLONE IMPORTS ###
 
+// include theme css/less
+@import (less) "business-casual.css";
+
+// include our custom css/less
 @import "main.less";
