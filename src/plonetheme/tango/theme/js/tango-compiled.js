@@ -279,5 +279,5 @@ require([
 
 });
 
-define("/home/maik/develop/plone/plonetheme.tango/src/plonetheme/tango/theme/js/bundle.js", function(){});
+define("/home/gomez/dev/plonetheme.tango/src/plonetheme/tango/theme/js/bundle.js", function(){});
 
