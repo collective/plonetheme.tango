@@ -338,6 +338,9 @@ hr {
   overflow: visible;
   clip: auto;
 }
+body {
+  word-wrap: break-word;
+}
 h1,
 h2,
 h3,
@@ -395,6 +398,7 @@ p {
   font-size: 18px;
   font-weight: 500;
   color: #777777;
+  margin-bottom: 10px;
 }
 small {
   font-size: 85%;
@@ -413,14 +417,12 @@ mark {
 .documentByLine {
   color: #777777;
   font-weight: 300;
+  margin-bottom: 10px;
 }
 .documentFirstHeading {
   padding-bottom: 9px;
-  margin: 0 0 20px;
+  margin: 0 0 10px;
   border-bottom: 1px solid #cccccc;
-}
-.tileHeadline {
-  padding-top: 20px;
 }
 ul,
 ol {
@@ -583,6 +585,58 @@ th {
   .plone-has-table > .listing > tfoot > tr > td {
     white-space: nowrap;
   }
+}
+table {
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #e5e5e5;
+}
+table > thead > tr > th,
+table > tbody > tr > th,
+table > tfoot > tr > th,
+table > thead > tr > td,
+table > tbody > tr > td,
+table > tfoot > tr > td {
+  vertical-align: top;
+  border-top: 1px solid #e5e5e5;
+}
+table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #e5e5e5;
+}
+table > caption + thead > tr:first-child > th,
+table > colgroup + thead > tr:first-child > th,
+table > thead:first-child > tr:first-child > th,
+table > caption + thead > tr:first-child > td,
+table > colgroup + thead > tr:first-child > td,
+table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+table > tbody + tbody {
+  border-top: 2px solid #e5e5e5;
+}
+table > thead > tr > th,
+table > tbody > tr > th,
+table > tfoot > tr > th,
+table > thead > tr > td,
+table > tbody > tr > td,
+table > tfoot > tr > td {
+  border: 1px solid #e5e5e5;
+}
+table > thead > tr > th,
+table > thead > tr > td {
+  border-bottom-width: #e5e5e5;
+}
+table col[class*="col-"] {
+  position: static;
+  float: none;
+  display: table-column;
+}
+table td[class*="col-"],
+table th[class*="col-"] {
+  position: static;
+  float: none;
+  display: table-cell;
 }
 fieldset {
   padding: 0;
@@ -873,8 +927,13 @@ label .required:after {
   font-weight: 300;
   color: #696969;
 }
+.ordered-selection-field td {
+  vertical-align: middle;
+  text-align: center;
+}
 .ordered-selection-field td button {
-  margin-left: 5px;
+  float: left;
+  margin-left: 2rem;
 }
 .folder-factories {
   list-style: none;
@@ -1596,6 +1655,20 @@ fieldset[disabled] .link-parent.active {
   font-weight: 300;
   color: #777777;
 }
+.tileImage {
+  padding-right: 5px;
+  float: left;
+}
+.tileImageNoFloat {
+  margin-bottom: 5px;
+}
+.tileFooter {
+  clear: both;
+  margin-top: 5px;
+}
+.photoalbumEntryWrapper {
+  display: block;
+}
 .photoAlbumEntry {
   display: inline-block;
   margin: 5px;
@@ -2311,6 +2384,17 @@ fieldset[disabled] .link-parent.active {
 .template-member-registration input.quickSearch {
   margin-bottom: 0.5em;
 }
+.template-usergroup-groupprefs .listingCheckbox,
+.template-usergroup-userprefs .listingCheckbox,
+.template-usergroup-controlpanel .listingCheckbox,
+.template-member-registration .listingCheckbox {
+  vertical-align: middle;
+  text-align: center;
+}
+.template-usergroup-groupprefs form,
+.template-usergroup-userprefs form {
+  overflow: scroll;
+}
 .link-category {
   display: inline;
   padding: .2em .6em .3em;
@@ -2639,6 +2723,10 @@ body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-news-item:after {
   border-radius: 0 0 4px 4px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.17);
 }
+.picker__wrap {
+  margin: 0;
+  /* overrides -1px used to get rid of unecessary scrollbar */
+}
 .picker__list-item:hover {
   background: #f0f0f0;
   color: #4d4d4d;
@@ -2659,16 +2747,12 @@ ul.picker__list {
   margin: 0;
   padding: 0;
 }
-.picker__button--clear,
-.picker__footer button {
+.picker--time .picker__button--clear {
   width: 100%;
   border-left: 0;
   border-right: 0;
   border-bottom: 0;
   border-radius: 0;
-}
-.picker__footer button {
-  width: 50% !important;
 }
 .picker__table {
   width: 100%;
@@ -2684,31 +2768,17 @@ ul.picker__list {
 .picker__nav--next,
 .picker__nav--prev {
   position: absolute;
-}
-.picker__nav--next:before,
-.picker__nav--prev:before {
-  content: "«";
-  font-size: 25px;
-  font-weight: 100;
-  margin-left: 5px;
-  top: -2px;
-  position: relative;
-  color: #08c;
-}
-.picker__nav--prev:before {
-  content: "»";
-  font-size: 25px;
-  font-weight: 100;
-  margin-right: 5px;
-  top: -2px;
-  position: relative;
-  color: #08c;
+  top: 0.5em;
 }
 .picker__select--month,
 .picker__select--year {
   width: 35%;
   display: inline-block;
   margin: 0 6px;
+  font-size: 1em;
+}
+.picker__day {
+  font-weight: 400;
 }
 .picker__day--infocus:hover,
 .picker__day--outfocus:hover {
@@ -2719,12 +2789,10 @@ ul.picker__list {
 .picker__day--highlighted {
   background: #007bb3;
   color: #fff;
+  font-weight: 600;
 }
 .picker__day--outfocus {
   color: #cccccc;
-}
-.picker__day--today {
-  font-weight: 600;
 }
 .pat-sortable > *:hover {
   cursor: move;
@@ -2794,6 +2862,114 @@ ul.picker__list {
 }
 .jqtree-tree .jqtree-selected > .jqtree-element {
   background: #cccccc;
+}
+#portal-header {
+  margin: 0 auto 15px;
+  padding-top: 15px;
+  margin-bottom: 20px;
+}
+#portal-header #portal-logo {
+  float: left;
+}
+#portal-header #portal-languageselector {
+  float: left;
+  clear: both;
+  display: inline-block;
+  margin-right: 29px;
+  padding-top: 5px;
+}
+#portal-header #portal-languageselector li {
+  display: inline-block;
+  margin-right: 10px;
+}
+#portal-header #portal-anontools {
+  float: right;
+}
+#portal-header #portal-anontools ul {
+  padding-right: 0px;
+}
+#portal-header #portal-searchbox {
+  padding-top: 20px;
+  clear: left;
+  width: 67%;
+  position: absolute;
+  z-index: 2;
+  margin-left: 3px;
+  margin-top: 60px;
+  white-space: nowrap;
+}
+#portal-header #portal-searchbox .searchSection {
+  display: none;
+}
+#portal-header #portal-searchbox [type="text"] {
+  width: 100%;
+  display: inline-block;
+}
+#portal-header #portal-searchbox [type="submit"] {
+  display: none;
+}
+#portal-header #portal-searchbox label {
+  font-size: 86.667%;
+}
+#portal-header #portal-searchbox form > div {
+  font-size: 0;
+}
+#portal-header #portal-searchbox form > div > * {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  #portal-header #portal-languageselector {
+    float: right;
+    clear: none;
+  }
+  #portal-header #portal-anontools {
+    float: right;
+  }
+  #portal-header #portal-searchbox {
+    position: relative;
+    margin-top: 5px;
+    margin-bottom: -5px;
+    margin-left: 1em;
+    padding-top: 0;
+    clear: none;
+    float: right;
+    max-width: 50%;
+    width: 250px;
+    white-space: nowrap;
+  }
+  #portal-header #portal-searchbox .searchSection {
+    display: inherit;
+  }
+  #portal-header #portal-searchbox [type="text"] {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: calc(180px);
+    display: inline-block;
+  }
+  #portal-header #portal-searchbox [type="submit"] {
+    display: none;
+    width: 70px;
+    display: inline-block;
+    margin-left: -1px;
+    vertical-align: top;
+  }
+  #portal-header #portal-searchbox label {
+    font-size: 86.667%;
+  }
+  #portal-header #portal-searchbox form > div {
+    font-size: 0;
+  }
+  #portal-header #portal-searchbox form > div > * {
+    font-size: 14px;
+  }
+}
+#portal-header:before,
+#portal-header:after {
+  content: " ";
+  display: table;
+}
+#portal-header:after {
+  clear: both;
 }
 .plone-nav {
   margin-bottom: 0;
@@ -3501,9 +3677,30 @@ body.template-logged_out #content-core .portletFooter {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.17);
   overflow: hidden;
 }
+.newsImageContainer a {
+  display: table;
+}
+.newsImageContainer a img {
+  display: block;
+}
 .newsImageContainer figcaption {
+  display: table-caption;
+  caption-side: bottom;
   font-size: 12px;
   background: #fcfcfd;
+}
+#commenting:before,
+#commenting:after {
+  content: " ";
+  display: table;
+}
+#commenting:after {
+  clear: both;
+}
+#commenting legend,
+.discussion legend {
+  padding: 0.5em 0.5em 0.5em 0;
+  font-weight: normal;
 }
 .discussion:before,
 .discussion:after {
@@ -3512,9 +3709,6 @@ body.template-logged_out #content-core .portletFooter {
 }
 .discussion:after {
   clear: both;
-}
-.discussion .hide {
-  display: none;
 }
 .discussion .comment {
   margin-bottom: 12px;
@@ -3528,46 +3722,41 @@ body.template-logged_out #content-core .portletFooter {
   margin-left: -40px;
   margin-top: 3px;
 }
+.discussion .documentByLine {
+  font-weight: normal;
+}
 .discussion .commentDate {
   float: right !important;
   display: inline;
   font-size: 12px;
+  color: #76797C;
+}
+.discussion .commentBody {
+  margin: 1em 0;
+  padding: 1em;
+  overflow: auto;
+  border: 1px solid #ccc;
 }
 .discussion .commentBody p {
+  float: left;
   margin-bottom: 0;
 }
-.discussion .commentActions input,
-.discussion .reply-to-comment-button {
-  border: 0;
-  padding: 0;
-  text-shadow: none;
-  font-weight: 300;
-  background: none;
-  color: #007bb3;
+.discussion .commentactionsform {
+  display: inline;
+  margin-left: 6px;
 }
-.discussion .commentActions input:hover,
-.discussion .reply-to-comment-button:hover {
-  text-decoration: underline;
-  box-shadow: none;
-  color: #004666;
-}
-.discussion .commentActions input {
-  margin-right: 6px;
-  color: #bb4f45;
-}
-.discussion .commentActions input:hover {
-  color: #833730;
+.discussion .commentActions {
+  float: right;
+  text-align: right;
 }
 .discussion .reply {
   border-bottom: 1px solid #e5e5e5;
 }
-#commenting:before,
-#commenting:after {
-  content: " ";
-  display: table;
-}
-#commenting:after {
-  clear: both;
+.cancelreplytocomment {
+  /* Hide the cancel button in the comment form, show it only in the reply form
+   * in order to close it.
+   */
+  display: none;
 }
 .replyTreeLevel0 {
   margin-left: 0;
@@ -3602,10 +3791,6 @@ body.template-logged_out #content-core .portletFooter {
 .replyTreeLevel10 {
   margin-left: 240px;
 }
-.template-discussion-settings .unclickable {
-  opacity: 0.6;
-  filter: alpha(opacity=60);
-}
 #viewlet-below-content .loginbutton {
   margin: 12px 0;
 }
@@ -3614,6 +3799,13 @@ body.template-logged_out #content-core .portletFooter {
 }
 #viewlet-below-content .reply ~ .reply .loginbutton {
   display: inline-block;
+}
+#dobulkaction {
+  margin: 0.3em 0;
+}
+.template-discussion-controlpanel .unclickable {
+  opacity: 0.6;
+  filter: alpha(opacity=60);
 }
 .searchPage {
   position: relative;
@@ -3650,6 +3842,9 @@ body.template-logged_out #content-core .portletFooter {
 }
 #searchform .input-group input.searchPage.btn {
   width: 120px;
+}
+#search-filter input {
+  margin-right: 0.5rem;
 }
 /*!
  * Start Bootstrap - Business Casual Bootstrap Theme (http://startbootstrap.com)
