@@ -6,67 +6,6 @@
 plonetheme.tango
 ==============================================================================
 
-Tell me what your product does
+This is an example product for the Plone theming training.
 
-Features
---------
-
-- Can be bullet points
-
-
-Examples
---------
-
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
-
-
-Documentation
--------------
-
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
-
-
-Translations
-------------
-
-This product has been translated into
-
-- Klingon (thanks, K'Plai)
-
-
-Installation
-------------
-
-Install plonetheme.tango by adding it to your buildout::
-
-   [buildout]
-
-    ...
-
-    eggs =
-        plonetheme.tango
-
-
-and then running "bin/buildout"
-
-
-Contribute
-----------
-
-- Issue Tracker: https://github.com/collective/plonetheme.tango/issues
-- Source Code: https://github.com/collective/plonetheme.tango
-- Documentation: https://docs.plone.org/foo/bar
-
-
-Support
--------
-
-If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
-
-
-License
--------
-
-The project is licensed under the GPLv2.
+TODO: add url to Plone theming training!
