@@ -31,9 +31,12 @@
   <copy attributes="*" css:content="body" css:theme="body" />
 
   <!-- toolbar -->
-  <replace css:theme="#portal-toolbar" css:content-children="#edit-bar" css:if-not-content=".ajax_load" css:if-content=".userrole-authenticated"/>
-  <replace css:theme="#anonymous-actions" css:content-children="#portal-personaltools-wrapper" css:if-not-content=".ajax_load" css:if-content=".userrole-anonymous"/>
-
+  <before
+    css:theme-children="body"
+    css:content-children="#edit-bar"
+    css:if-not-content=".ajax_load"
+    css:if-content=".userrole-authenticated"
+    />
 
   <!-- front-page slider -->
   <replace
