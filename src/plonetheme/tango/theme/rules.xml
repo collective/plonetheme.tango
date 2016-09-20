@@ -45,10 +45,7 @@
     href="/slider-images/@@slider-images" />
   <drop
     css:theme="#front-page-slider"
-    css:if-not-content=".section-front-page" />
-  <drop
-    css:theme="#front-page-slider"
-    css:if-content=".template-edit" />
+    css:if-not-content=".section-front-page.template-document_view" />
 
   <!-- replace theme navbar-nav with Plone plone-navbar-nav -->
   <replace
