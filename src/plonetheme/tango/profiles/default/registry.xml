@@ -1,35 +1,6 @@
 <?xml version="1.0"?>
 <registry>
 
-	<records prefix="plone.resources/tango-main"
-	          interface='Products.CMFPlone.interfaces.IResourceRegistry'>
-	   <value key="css">
-	      <element>++plone++plonetheme.tango/css/main.less</element>
-	   </value>
-	</records>
-
-	<records prefix="plone.resources/tango"
-	          interface='Products.CMFPlone.interfaces.IResourceRegistry'>
-	   <value key="js">++plone++plonetheme.tango/js/bundle.js</value>
-	   <value key="css">
-	      <element>++plone++plonetheme.tango/css/bundle.less</element>
-	   </value>
-	</records>
-
-
-	<!-- bundle definition -->
-	<records prefix="plone.bundles/tango-bundle"
-	          interface='Products.CMFPlone.interfaces.IBundleRegistry'>
-	  <value key="resources">
-	    <element>tango</element>
-	  </value>
-	  <value key="enabled">True</value>
-	  <value key="compile">True</value>
-	  <value key="jscompilation">++plone++plonetheme.tango/js/bundle-compiled.js</value>
-	  <value key="csscompilation">++plone++plonetheme.tango/css/bundle-compiled.css</value>
-	  <value key="last_compilation">2015-05-28 00:00:00</value>
-	</records>
-
 	<record name="plone.templates" interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema" field="templates">
 	  <field type="plone.registry.field.Text">
 	    <default></default>
@@ -37,12 +8,12 @@
 	    <required>False</required>
 	    <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="plone" ns0:translate="label_tinymce_templates">Templates</title>
 	  </field>
-	  <value>[ &#13;
-	  {&#13;
-	      "title": "Content box", &#13;
-	      "url": "++theme++plonetheme.tango/tinymce_templates/content-box.html"}&#13;
-	]</value>
+	  <value>[
+	  	{"title": "Content box", "url": "++theme++tango/tinymce_templates/content-box.html"},
+	  	{"title": "Teaser Grid flexbox 2x2", "url": "++theme++tango/tinymce_templates/teaser-grid-flexbox-2x2.html"}
+	  	]</value>
 	</record>
+
 	<record name="plone.custom_plugins" interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema" field="custom_plugins">
 	    <field type="plone.registry.field.List">
 	      <default/>
