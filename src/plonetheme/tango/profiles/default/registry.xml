@@ -10,7 +10,7 @@
 	  </field>
 	  <value>[
 	  	{"title": "Content box", "url": "++theme++tango/tinymce_templates/content-box.html"},
-	  	{"title": "Teaser Grid flexbox 2x2", "url": "++theme++tango/tinymce_templates/teaser-grid-flexbox-2x2.html"}
+	  	{"title": "Image Grid 2x2", "url": "++theme++tango/tinymce_templates/image-grid-2x2.html"}
 	  	]</value>
 	</record>
 
