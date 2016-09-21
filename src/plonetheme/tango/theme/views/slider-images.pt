@@ -1,3 +1,12 @@
+<span tal:condition="nothing">
+<!--
+Bootstrap carousel template only view, to be called on a folder with images and included by Diazo into your layout.
+see: https://github.com/collective/plonetheme.tango/blob/master/src/plonetheme/tango/theme/rules.xml#L41
+
+To activate the view, remove the ".example" extension from the file!
+-->
+</span>
+
 <div id="carousel-example-generic" class="carousel slide">
 	<!-- Indicators -->
 	<ol class="carousel-indicators hidden-xs">
