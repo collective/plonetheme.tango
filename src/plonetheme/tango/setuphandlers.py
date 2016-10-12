@@ -4,10 +4,6 @@ import os
 
 
 def post_install(context):
-    """Post install script"""
-    if context.readDataFile('plonethemetango_default.txt') is None:
-        return
-    # Do something during the installation of this package
     portal = api.portal.get()
     _create_content(portal)
 
